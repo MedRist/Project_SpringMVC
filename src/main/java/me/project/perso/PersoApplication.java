@@ -1,5 +1,8 @@
 package me.project.perso;
 
+import me.project.perso.dao.ProductRepository;
+import me.project.perso.entities.Product;
+import org.apache.catalina.core.ApplicationContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class PersoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PersoApplication.class, args);
+		org.springframework.context.ApplicationContext ctx = SpringApplication.run(PersoApplication.class, args);
+
 	}
 }

@@ -4,6 +4,9 @@ package me.project.perso.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Entity
@@ -12,7 +15,10 @@ public class Product implements Serializable{
     @Id
     @GeneratedValue
     private Long id;
+    @NotNull
+    @Size(min = 5,max = 20)
     private String designation;
+    @DecimalMin("100")
     private double price;
     private int quantity;
 
