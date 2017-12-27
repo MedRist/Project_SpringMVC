@@ -50,14 +50,9 @@ public class ProductController {
 
 
     @RequestMapping(value = "/form",method = RequestMethod.GET)
-    public String form(Model model
-
-//                       @RequestParam(name = "designation") String designation,
-//                       @RequestParam(name = "price") double price,
-//                       @RequestParam(name = "quantity") int quantity
- )
+    public String form(Model model)
     {
-        model.addAttribute("produit",new Product());
+        model.addAttribute("product",new Product());
         return "form";
 
     }
@@ -73,6 +68,7 @@ public class ProductController {
 
         }
         productRepository.save(product);
+        model.addAttribute("product",product);
         return "Confirmation";
 
     }
